@@ -1,6 +1,6 @@
 data,canal,tema,resumo,resolvido
-2025-09-15,chat,CDB,Cliente perguntou sobre rentabilidade e prazos,sim
-2025-09-22,telefone,Problema no app,Erro ao visualizar extrato foi corrigido,sim
-2025-10-01,chat,Tesouro Selic,Cliente pediu explicação sobre o funcionamento do Tesouro Direto,sim
-2025-10-12,chat,Metas financeiras,Cliente acompanhou o progresso da reserva de emergência,sim
-2025-10-25,email,Atualização cadastral,Cliente atualizou e-mail e telefone,sim
+2025-09-15,chat,Configuração de Renda,Usuário informou o salário líquido para iniciar o cálculo da reserva de 20%,sim
+2025-09-22,chat,Identificação de Padrão,Registro de aluguel e internet como custos fixos para dedução do orçamento,sim
+2025-10-01,chat,Limite Mensal,Consulta sobre o valor disponível para gastos livres após reserva e custos fixos,sim
+2025-10-12,chat,Classificação de Despesa,Validação de que a compra de vestuário é um gasto livre e não um custo fixo,sim
+2025-10-25,chat,Reserva de Emergência,Confirmação de que o percentual de 20% foi preservado apesar dos gastos extras,sim
