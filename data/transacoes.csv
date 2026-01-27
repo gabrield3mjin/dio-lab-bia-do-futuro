@@ -9,3 +9,11 @@ data,descricao,categoria,valor,tipo
 2025-10-15,Conta de Luz,moradia,180.00,saida
 2025-10-20,Academia,saude,99.00,saida
 2025-10-25,Combustível,transporte,250.00,saida
+2025-10-28,Internet Fibra,moradia,100.00,saida
+2025-10-29,Ifood Jantar,alimentacao,85.00,saida
+2025-10-30,Reserva de Emergência,investimento,1000.00,saida
+2025-11-01,Salário,receita,5000.00,entrada
+2025-11-02,Aluguel,moradia,1200.00,saida
+2025-11-03,Assinatura Spotify,lazer,21.90,saida
+2025-11-04,Supermercado Quinzenal,alimentacao,620.00,saida
+2025-11-05,Cinema e Pipoca,lazer,75.00,saida
