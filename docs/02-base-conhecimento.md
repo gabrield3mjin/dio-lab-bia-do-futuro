@@ -51,8 +51,10 @@ data,descricao,categoria,valor,tipo
 2025-10-30,Reserva de Emergência,investimento,1000.00,saida
 
 HISTÓRICO DE RESERVA (historico_reserva.csv):
-- Setembro: R$ 1.000,00
-- Outubro: R$ 1.000,00 (Meta batida!)
+mes,valor_aportado,saldo_acumulado
+2025-11,1000.00,1000.00
+2025-12,1000.00,2000.00
+2026-01,1150.00,3150.00
 ```
 
 ---
