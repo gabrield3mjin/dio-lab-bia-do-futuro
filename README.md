@@ -1,149 +1,55 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 🤖 Dário - Assistente Financeiro Inteligente
 
-## Contexto
-
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+Dário (**D**iagnóstico e **A**nálise de **R**eserva com **I**nteligência **O**timizada) é um agente inteligente desenvolvido para auxiliar jovens profissionais na organização de suas rendas mensais. O foco central do agente é garantir a manutenção de uma reserva de emergência de 20%, protegendo-a contra gastos excessivos.
 
 ---
 
-## O Que Você Deve Entregar
+## 💡 Funcionalidades Principais
 
-### 1. Documentação do Agente
-
-Defina **o que** seu agente faz e **como** ele funciona:
-
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+* **Organização Salarial**: Divide a renda em três categorias fixas: Custos Fixos, Gastos Livres e Reserva de Emergência.
+* **Gestão de Reserva**: Aplica a regra de ouro onde a reserva (padrão de 20% da renda, que pode ser alterado) é subtraída antes de qualquer cálculo de lazer.
+* **Lógica Consultiva**: Calcula limites dinâmicos para gastos livres utilizando a fórmula: `Renda - (Custos Fixos + Reserva)`.
+* **Reconhecimento de Padrões**: Classifica despesas automaticamente com base em uma base de conhecimento predefinida.
+* **Protocolo de Emergência**: Orienta o uso consciente da reserva em casos de emergências reais e planeja sua recomposição.
 
 ---
 
-### 2. Base de Conhecimento
+## 🛠️ Arquitetura e Tecnologia
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
+O projeto utiliza uma arquitetura RAG (*Retrieval-Augmented Generation*) para garantir respostas precisas e seguras.
 
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+| Componente | Tecnologia |
+| --- | --- |
+| **Interface** | Streamlit |
+| **Cérebro (LLM)** | Ollama (modelo gpt-oss) |
+| **Processamento** | Pandas & JSON para injeção de contexto |
+| **Base de Dados** | Estrutura mockada em CSV/JSON na pasta `/data` |
 
 ---
 
-### 3. Prompts do Agente
+## 📂 Estrutura de Dados
 
-Documente os prompts que definem o comportamento do seu agente:
+O agente baseia-se nos seguintes arquivos para suas análises:
 
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
+* `perfil_cliente.json`: Dados demográficos e metas do usuário.
+* `config_usuario.json`: Salário líquido e percentual de reserva alvo.
+* `transacoes.csv`: Histórico bruto de entradas e saídas.
+* `categorias_padrao.json`: Mapeamento de descrições para categorias.
+* `historico_reserva.csv`: Evolução mensal da poupança.
+* `historico_atendimento.csv`: Contextualização de interações passadas.
 
 ---
 
-### 5. Avaliação e Métricas
+## 🚀 Como Executar
 
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
+As instruções de execução estão no README da pasta `/src`, onde também se encontra a aplicação.
 
 ```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
-```
+
+
 
 ---
 
-## Dicas Finais
+## 🛡️ Segurança e Qualidade
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+Dário foi configurado com diretrizes rigorosas contra alucinações: não inventa transações, não acessa senhas e admite quando não possui dados suficientes para um diagnóstico. O sistema foi validado com testes de assertividade e coerência, garantindo que o limite de gastos livres seja sempre respeitado.
