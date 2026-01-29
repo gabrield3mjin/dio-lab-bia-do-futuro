@@ -20,20 +20,15 @@
 Para agentes rodando localmente (como no seu setup Streamlit + Ollama), os dados são carregados para compor o contexto da sessão:
 
 ```python
-import pandas as pd
 import json
+import pandas as pd
 
-# Carregamento de Tabelas
-transacoes = pd.read_csv('data/transacoes.csv')
-hist_atendimento = pd.read_csv('data/historico_atendimento.csv')
-hist_reserva = pd.read_csv('data/historico_reserva.csv')
-
-# Carregamento de Regras e Perfil
-with open('data/config_usuario.json', 'r') as f:
-    config = json.load(f)
-
-with open('data/categorias_padrao.json', 'r') as f:
-    categorias = json.load(f)
+perfil = json.load(open('./data/perfil_cliente.json'))
+config_usuario = json.load(open('./data/config_usuario.json'))
+historico_atendimento = pd.read_csv(open('./data/historico_atendimento.csv'))
+historico_reserva = pd.read_csv(open('./data/historico_reserva.csv'))
+categorias = json.load(open('./data/categorias_padrao.json'))
+transacoes = pd.read_csv(open('./data/transacoes.csv'))
 ```
 
 ### Como os dados são usados no prompt?
