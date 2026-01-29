@@ -144,7 +144,6 @@ Olá! Registrei o gasto de R$ 300,00 em Supermercado, mas notei um detalhe impor
 
 Sem o valor do seu salário, eu não consigo calcular o impacto percentual desse gasto e nem garantir que seus 20% de reserva estão protegidos. Pode informar qual foi sua renda líquida este mês? Assim eu já atualizo todo o seu diagnóstico!
 
-[Testar esse System Prompt e executar testes em LLMs]
 ```
 
 ## Exemplos de Interação
@@ -313,7 +312,6 @@ Sem o valor do seu salário, eu não consigo calcular o impacto percentual desse
 
 ## Observações e Aprendizados
 
-> Registre aqui ajustes que você fez nos prompts e por quê.
+> Observações registradas
 
-- [Observação 1]
-- [Observação 2]
+- Testei o System Prompt nas LLMs ChatGPT, Copilot e Claude. Todos aceitaram muito bem a persona, regras, exemplos e dados do agente virtual. Destaco o Claude como o melhor nesse quesito, já que ele imediatamente retornou quais custos são fixos, considerou a reserva mensal em 20%, de acordo com o arquivo `config_usuario.json`, além de também trazer o calculo exato de quanto há disponível para gastos livres.
