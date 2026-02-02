@@ -44,12 +44,6 @@ O agente baseia-se nos seguintes arquivos para suas análises:
 
 As instruções de execução estão no README da pasta `/src`, onde também se encontra a aplicação.
 
-```
-
-
-
----
-
 ## 🛡️ Segurança e Qualidade
 
 Dário foi configurado com diretrizes rigorosas contra alucinações: não inventa transações, não acessa senhas e admite quando não possui dados suficientes para um diagnóstico. O sistema foi validado com testes de assertividade e coerência, garantindo que o limite de gastos livres seja sempre respeitado.
